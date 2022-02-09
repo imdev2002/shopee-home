@@ -1,0 +1,148 @@
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+  :root {
+    --header-height: 68px;
+    --navbar-height: 0px;
+  }
+  .hide-on-mobile-tablet {
+    display: none;
+  }
+  .header {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .header__cart-list {
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    width: 100%;
+  }
+  .header__cart-list::before {
+    display: none;
+  }
+  .header__sort-bar {
+    display: flex;
+  }
+  .app__container {
+    margin-top: calc(var(--header-height) + var(--header-sort-bar-height));
+  }
+  .app__content {
+    padding-top: 12px;
+  }
+  .mobile-category {
+    display: block;
+  }
+  .home-product-item:hover .home-product-item__related {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+  .hide-on-tablet {
+    display: none;
+  }
+  .header__cart {
+    width: 70px;
+    text-align: right;
+  }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  .header-with-search {
+    justify-content: space-between;
+  }
+  .header__logo {
+    margin-right: 0;
+  }
+  .header__cart {
+    width: unset;
+  }
+  .header__right {
+    display: block;
+  }
+  @keyframes mobileBarFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .header__search {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: var(--header-height);
+    z-index: 1;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%);
+    height: 48px;
+    animation: mobileSearchSideIn linear 0.5s;
+    display: none;
+  }
+  @keyframes mobileSearchSideIn {
+    from {
+      opacity: 0;
+      height: 0;
+    }
+    to {
+      opacity: 1;
+      /* height: 50px; */
+    }
+  }
+  .header__search-history {
+    width: 100vh;
+  }
+  .home-product__pagination {
+    margin: 36px 0;
+  }
+  .pagination-item {
+    margin: 0;
+  }
+  .pagination-item__link {
+    --height: 28px;
+    min-width: 36px;
+    font-size: 1.6rem;
+  }
+  .home-product {
+    margin: 0 5px;
+  }
+  .footer {
+    padding: 0 5px;
+  }
+  .footer__content {
+    padding: 0 6px;
+  }
+  .footer__center {
+    justify-content: center;
+    padding: 0;
+  }
+  .footer__download-app-img {
+    height: unset;
+  }
+  .footer__content > div:last-child {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .footer__download-app-img:last-child {
+    margin-top: 16px;
+  }
+  .footer__registered {
+    padding-top: 12px;
+  }
+  .footer__registered-link {
+    margin: 0 4px;
+  }
+  .footer__bottom {
+    padding-bottom: 16px;
+  }
+}
